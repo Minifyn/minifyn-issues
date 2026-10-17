@@ -1,0 +1,29 @@
+name: Question
+description: Ask how something works
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the [help pages](https://www.minifyn.com/help) first. Account or payment questions: use the [contact page](https://www.minifyn.com/contact).
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - MiniFyn website / short links
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

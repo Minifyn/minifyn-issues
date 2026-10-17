@@ -1,0 +1,86 @@
+name: Bug report
+description: Something doesn't work as expected
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Don't include personal data, files, passwords or private links.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - MiniFyn website / short links
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Settings → About, or the extension's details page. "Website" for minifyn.com.
+      placeholder: e.g. 2.7.1
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Device and OS
+      placeholder: e.g. Galaxy S25, Android 16 / macOS 26 / Manjaro, Chrome 140
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often?
+      options:
+        - Every time
+        - Sometimes
+        - Once
+  - type: textarea
+    id: logs
+    attributes:
+      label: Diagnostics or logs
+      description: Paste "Copy diagnostics" output if the app has it. Check it first for anything private.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag files here. Blur anything private.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and this isn't a duplicate.
+          required: true
+        - label: I removed personal data from this report.
+          required: true

@@ -1,0 +1,42 @@
+name: Accessibility problem
+description: Hard to use with a screen reader, keyboard, large text, contrast or other assistive settings
+title: "[A11y]: "
+labels: ["accessibility", "triage"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - MiniFyn website / short links
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Device, OS and assistive technology
+      placeholder: e.g. Pixel 9, Android 16, TalkBack / macOS 26, VoiceOver
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's hard to do?
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Which screen or step?

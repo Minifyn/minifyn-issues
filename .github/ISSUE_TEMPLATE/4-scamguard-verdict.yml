@@ -1,0 +1,61 @@
+name: ScamGuard wrong result
+description: A safe link was flagged, or a scam link was missed
+title: "[Verdict]: "
+labels: ["scamguard", "verdict", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write the link with brackets so nobody clicks it by accident: `hxxps://example[.]com/path`. Remove personal tokens or codes from the link.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - Safe link was flagged (false positive)
+        - Scam link was marked safe (missed)
+    validations:
+      required: true
+  - type: dropdown
+    id: product
+    attributes:
+      label: Where?
+      options:
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link (defanged)
+      placeholder: hxxps://example[.]com/path
+    validations:
+      required: true
+  - type: input
+    id: shown
+    attributes:
+      label: Result shown
+      placeholder: e.g. "Dangerous", "Looks safe"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App or extension version
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you think the result is wrong?
+      description: e.g. it's your own site, or how the scam reached you (SMS, email, ad).
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I defanged the link and removed personal tokens.
+          required: true
