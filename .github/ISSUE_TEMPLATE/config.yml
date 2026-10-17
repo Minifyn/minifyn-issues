@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability (private)
+    url: https://github.com/Minifyn/minifyn-issues/security/advisories/new
+    about: Report security issues privately. Never open a public issue for them.
+  - name: Privacy or data request
+    url: https://www.minifyn.com/privacy
+    about: Access, correction or deletion requests (GDPR, DPDP, CCPA). Not handled in public issues.
+  - name: Billing, payments or refunds
+    url: https://www.minifyn.com/contact
+    about: Payment questions contain personal details, so contact us privately.
+  - name: Copyright notice (DMCA)
+    url: https://www.minifyn.com/dmca
+    about: Send copyright takedown notices through the DMCA page.
+  - name: Help and docs
+    url: https://www.minifyn.com/help
+    about: Answers to common questions.

@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest an idea or improvement
+title: "[Idea]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - MiniFyn website / short links
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      placeholder: I'm trying to … but …
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Workarounds or alternatives you tried
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and this isn't a duplicate.
+          required: true

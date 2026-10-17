@@ -1,0 +1,54 @@
+name: Report abusive short link
+description: A minifyn.com or mnfy.in short link leads to phishing, malware or other harmful content
+title: "[Abuse]: "
+labels: ["abuse", "moderation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. We review every report. Write links with brackets so nobody clicks them by accident: `hxxps://mnfy[.]in/abc123`.
+        Copyright complaints go through the [DMCA page](https://www.minifyn.com/dmca), not here.
+  - type: input
+    id: short-url
+    attributes:
+      label: Short link (defanged)
+      placeholder: hxxps://mnfy[.]in/abc123
+    validations:
+      required: true
+  - type: input
+    id: long-url
+    attributes:
+      label: Destination (defanged, if known)
+      placeholder: hxxps://example[.]com/page
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options:
+        - Phishing or scam
+        - Malware
+        - Child sexual abuse material
+        - Adult content
+        - Hate speech or harassment
+        - Violence or terrorism
+        - Other illegal content
+        - Spam
+        - Other
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        For child sexual abuse material, don't describe or link the content here. Choose the reason, give the short link only, and also report it to your national hotline (e.g. NCMEC CyberTipline, IWF).
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: How you found it (SMS, email, ad, post) and anything else useful.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: This is a good-faith report under the [Acceptable Use Policy](https://www.minifyn.com/acceptable-use).
+          required: true

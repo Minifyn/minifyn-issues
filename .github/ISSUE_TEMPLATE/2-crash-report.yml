@@ -1,0 +1,54 @@
+name: Crash report
+description: The app closed unexpectedly (usually opened from the app)
+title: "[Crash]: "
+labels: ["crash", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the app opened this page, most fields are already filled. The report holds no file names, keys or file contents. Issues are public.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - MiniFyn website / short links
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Device and OS
+    validations:
+      required: true
+  - type: textarea
+    id: doing
+    attributes:
+      label: What were you doing when it closed?
+      placeholder: e.g. sending 3 photos to a laptop over USB
+  - type: textarea
+    id: report
+    attributes:
+      label: Crash report
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I read the report and it contains nothing private.
+          required: true

@@ -1,0 +1,67 @@
+name: Translation problem
+description: Wrong, unnatural or missing text in your language
+title: "[Translation]: "
+labels: ["translation"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - ScamGuard (Android app)
+        - ScamGuard (browser extension)
+        - ClipFyn
+        - CensorFyn
+        - SendFyn
+        - Store listing
+    validations:
+      required: true
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Language
+      options:
+        - English (UK) en-GB
+        - English (US) en-US
+        - English (India) en-IN
+        - Deutsch de-DE
+        - Français fr-FR
+        - 日本語 ja-JP
+        - 한국어 ko-KR
+        - 繁體中文 zh-TW
+        - 简体中文 zh-CN
+        - Español es-ES
+        - Italiano it-IT
+        - Nederlands nl-NL
+        - Svenska sv-SE
+        - Dansk da-DK
+        - Norsk no-NO
+        - Suomi fi-FI
+        - العربية ar
+        - Português (Brasil) pt-BR
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where in the app?
+      placeholder: e.g. Receive screen, title
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested text
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot

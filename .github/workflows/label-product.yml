@@ -1,0 +1,31 @@
+name: Label product
+on:
+  issues:
+    types: [opened, edited]
+permissions:
+  issues: write
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const map = {
+              "MiniFyn website / short links": "minifyn-web",
+              "ScamGuard (Android app)": "scamguard",
+              "ScamGuard (browser extension)": "scamguard-extension",
+              "ClipFyn": "clipfyn",
+              "CensorFyn": "censorfyn",
+              "SendFyn": "sendfyn",
+            };
+            const body = context.payload.issue.body || "";
+            const m = body.match(/###\s+(?:Product|Where\?)\s*\n+([^\n]+)/);
+            const label = m && map[m[1].trim()];
+            if (!label) return;
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [label],
+            });
