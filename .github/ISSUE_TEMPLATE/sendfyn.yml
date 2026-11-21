@@ -1,0 +1,55 @@
+name: SendFyn problem
+description: Something in SendFyn didn't work
+title: "[SendFyn]: "
+labels: ["sendfyn", "bug", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Everything you post here is public, so leave out file names, device names and anything personal.
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Filled in by the app (Settings → About → Version)
+      placeholder: e.g., 1.0.0 (124)
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: Filled in by the app
+      placeholder: e.g., Android 14, macOS 15.1, Ubuntu 24.04
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you expected, and what happened instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open Send
+        2. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics (optional)
+      description: Settings → About → Copy diagnostics, then paste here. It has no file names or contents.
+      render: text
+    validations:
+      required: false
